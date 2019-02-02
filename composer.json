@@ -31,7 +31,6 @@
     }
   ],
   "require": {
-    "rojocoding/TastyIgniter": "dev-master",
     "php": ">=7.0",
     "ext-mbstring": "*",
     "ext-json": "*",
