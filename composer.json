@@ -24,12 +24,6 @@
     "docs": "https://docs.tastyigniter.com",
     "source": "https://github.com/tastyigniter/TastyIgniter"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/rojocoding/TastyIgniter"
-    }
-  ],
   "require": {
     "php": ">=7.0",
     "ext-mbstring": "*",
