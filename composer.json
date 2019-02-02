@@ -1,9 +1,9 @@
 {
-  "name": "rojocoding/tastyigniter",
-  "description": "TastyIgniter is a free open source online ordering and restaurant management system",
+  "name": "rojocoding/pidelo",
+  "description": "Pidelo is a free open source online ordering and restaurant management system based on TastyIgniter",
   "type": "project",
   "keywords": [
-    "tastyigniter", "igniter",
+    "pidelo",
     "restaurant",
     "ordering", "ecommerce",
     "opensource"
