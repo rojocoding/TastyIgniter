@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'TastyIgniter',
+    'name' => env('APP_NAME', 'Pidelo'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => 'development',
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => TRUE,
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,40 @@ return [
     |
     */
 
-    'url' => 'http://localhost/',
+    'url' => env('APP_URL', 'http://localhost'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Admin Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of the default admin user.
+    |
+    */
+
+    'admin_name' => env('APP_ADMIN_NAME'),
+
+    /*
+   |--------------------------------------------------------------------------
+   | Application Admin username
+   |--------------------------------------------------------------------------
+   |
+   | This value is the usernamename of the default admin user.
+   |
+   */
+
+    'admin_username' => env('APP_ADMIN_USER'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Admin Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the password of the default admin user.
+    |
+    */
+
+    'admin_password' => env('APP_ADMIN_PASS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -101,7 +134,9 @@ return [
     | This key is used by the Illuminate encrypter service and should be set
     | to a random, 32 character string, otherwise these encrypted strings
     | will not be safe. Please do this before deploying an application!
-    |
+    | Overwritten 'key' value when run the IgniterInstall command. Look at
+    | docker-compose.yml command entry. If APP_KEY is mapped in .env file
+    | it will not be pick up here.
     */
 
     'key' => 'CHANGE!!!!!!!!!!!!!!!!!!!!!!!!!',

@@ -96,7 +96,9 @@ class IgniterInstall extends Command
 
     protected function rewriteConfigFiles()
     {
-        $this->writeDatabaseConfig();
+        // Commented line below because I modified
+        // the file /config/database.php to make use of ENV() to load values.
+//        $this->writeDatabaseConfig();
         $this->writeToConfig('app', ['key' => $this->generateEncryptionKey()]);
     }
 
@@ -137,21 +139,21 @@ class IgniterInstall extends Command
 
     protected function setSeederProperties()
     {
-        $siteName = $this->ask('Site Name', DatabaseSeeder::$siteName);
-        $this->writeToConfig('app', ['name' => $siteName]);
+        $siteName = Config::get('app.name');
+        //$this->writeToConfig('app', ['name' => $siteName]);
 
-        $url = $this->ask('Site URL', Config::get('app.url'));
-        $this->writeToConfig('app', ['url' => $url]);
+        $url = Config::get('app.url');
+        //$this->writeToConfig('app', ['url' => $url]);
 
         DatabaseSeeder::$siteName = $siteName;
-        DatabaseSeeder::$siteEmail = $this->ask('Admin Email', DatabaseSeeder::$siteEmail);
-        DatabaseSeeder::$staffName = $this->ask('Admin Name', DatabaseSeeder::$staffName);
+        DatabaseSeeder::$siteEmail = Config::get('mail.from.address');
+        DatabaseSeeder::$staffName = Config::get('app.admin_name');
     }
 
     protected function createSuperUser()
     {
-        $username = $this->ask('Admin Username', 'admin');
-        $password = $this->ask('Admin Password', '123456');
+        $username = Config::get('app.admin_username');
+        $password = Config::get('app.admin_password');
 
         $staff = \Admin\Models\Staffs_model::firstOrNew(['staff_email' => DatabaseSeeder::$siteEmail]);
         $staff->staff_name = DatabaseSeeder::$staffName;

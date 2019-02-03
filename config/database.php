@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'mysql',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,15 +41,15 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
-            'port' => 3306,
-            'database' => 'database',
-            'username' => 'username',
-            'password' => 'password',
+            'host' => env('DB_HOST', 'mysql'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('MYSQL_DATABASE'),
+            'username' => env('MYSQL_USER'),
+            'password' => env('MYSQL_PASSWORD'),
             'unix_socket' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => 'ti_',
+            'prefix' => env('DB_TABLE_PREFIX'),
             'strict' => FALSE,
             'engine' => null,
         ],

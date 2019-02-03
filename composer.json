@@ -46,7 +46,6 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "touch .env",
       "php artisan key:generate"
     ]
   },
